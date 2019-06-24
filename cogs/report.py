@@ -17,7 +17,8 @@ class prefix(commands.Cog):
         c = conn.cursor()
         c.execute("SELECT * FROM prefixes WHERE GuildID LIKE ?", ('{}'.format(guild.id),))
         response = c.fetchone()
-        if response
+        if response:
+            
 
 
 def setup(client):
