@@ -12,7 +12,7 @@ class report(commands.Cog):
 
     @commands.command()
     #A very simple report system which can be adapted over time to be complex.
-    async def report(self, ctx, *, arg:str):
+    async def report(self, ctx, user:str, *, arg:str):
         conn = sqlite3.connect("databases/ServerConfigs.db")
         conn.row_factory = sqlite3.Row
         c = conn.cursor()
@@ -20,10 +20,10 @@ class report(commands.Cog):
         response = c.fetchone()
         if response:
             channel = self.client.get_channel(response["LogChannelID"])
-            await channel.send(f"Report send by: {ctx.author.mention}\nUser report: {arg}")
+            await channel.send(f"Report send by: {ctx.author.mention}\nUser reported: {user}\nReport comment: {arg}")
             await ctx.send("You've done the right thing, citizen. Reporting struggles, scuffles, and tussles is the civic duty of every man, woman, and child.")
         if not response:
-            return None
+            await ctx.send("Report command is deactivated. Please contact a moderator directly!")
 
 
 def setup(client):
