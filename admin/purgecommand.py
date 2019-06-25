@@ -4,7 +4,6 @@ import discord
 from discord.ext import commands
 #import permissions
 from discord.ext.commands import has_permissions
-import sqlite3
 
 class purgecommand(commands.Cog):
     def __init__(self, client):
