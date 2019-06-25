@@ -15,7 +15,7 @@ class serverinformation(commands.Cog):
     @commands.guild_only()
     async def serverinfo(self, ctx):
         embed = discord.Embed(color=discord.Color.red())
-        embed.set_footer(text="This was brought to you by Enclave Database automated reply system")
+        embed.set_footer(text="This was brought to you by Robco industries automated reply system")
         #embed.set_image(url="")
         #embed.set_thumbnail(url="https://static1.squarespace.com/static/5bf3d1670dbda3ebca76e890/t/5bf3d4911ae6cfcc40a70d62/1547021826210/?format=1500w")
         embed.set_author(icon_url=ctx.guild.icon_url, name=f"Server information for {ctx.guild.name}")
