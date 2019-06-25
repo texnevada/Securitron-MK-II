@@ -48,7 +48,7 @@ class prefix(commands.Cog):
             embed.set_footer(text="This was brought to you by Robco Industries automated reply system")
             #embed.set_image(url="")
             embed.set_thumbnail(url="")
-            embed.set_author(name="Securitron MK II systems", icon_url=self.client.icon_url)
+            embed.set_author(name="Securitron MK II systems")
             if isprefixold == True:
                 embed.add_field(name="Your server prefix has changed!", value="Your prefix is now changed\n**Old:** {}\n**New:** {}\nYou can also use \"@Securitron MK\" II for commands even if you forget your prefix".format(oldprefix[0], arg))
             elif isprefixold == False:
