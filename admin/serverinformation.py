@@ -61,7 +61,7 @@ class serverinformation(commands.Cog):
     @commands.command()
     @commands.has_permissions(manage_channels=True)
     @commands.guild_only()
-    async def logentries(self, ctx, arg1:str, *, arg2:str):
+    async def modactions(self, ctx, arg1:str, *, arg2:str):
         #try:
         print(ctx.guild.me)
         entries = await ctx.guild.audit_logs(limit=None, user=ctx.guild.me).flatten()
