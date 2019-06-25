@@ -93,6 +93,8 @@ class help_commands(commands.Cog):
                 #sends embed
                 conn.close()
                 await ctx.send(embed=embed)
+            except:
+                return None
 
 def setup(client):
     client.add_cog(help_commands(client))
