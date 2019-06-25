@@ -104,7 +104,7 @@ Login proccedure for the bot
 async def on_ready():
     #prints that the bot is ready with its username, id,  version & number of guilds.
     print(f"\nBot is ready\nLogged in as\nBot's name: {client.user.name}\nBot id: {client.user.id}\nDiscord.py version: {discord.__version__}\n------\nBot is serving: {str(len(client.guilds))} guilds.")
-    await client.change_presence(status=discord.Status.online, activity=discord.Game(name="The Strip"))
+    await client.change_presence(status=discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name="The Strip"))
 
 #starts a client.event
 @client.event
