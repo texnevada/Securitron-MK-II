@@ -15,6 +15,8 @@ class slowmode(commands.Cog):
         try:
             if seconds >= 21601:
                 await ctx.send("Amount impossible. You can only do 21600 seconds or less.")
+            elif seconds <= -1:
+                await ctx.send("Amount impossible. You can only do 21600 seconds or less.")
             elif seconds != 0:
                 await ctx.channel.edit(slowmode_delay=seconds)
                 await ctx.send("The strip is now secure.")
