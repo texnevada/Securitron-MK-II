@@ -104,7 +104,7 @@ Login proccedure for the bot
 async def on_ready():
     #prints that the bot is ready with its username, id,  version & number of guilds.
     print(f"\nBot is ready\nLogged in as\nBot's name: {client.user.name}\nBot id: {client.user.id}\nDiscord.py version: {discord.__version__}\n------\nBot is serving: {str(len(client.guilds))} guilds.")
-    await client.change_presence(status=discord.Status.online, activity=discord.Game(name="@ZAX help"))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game(name="The Strip help"))
 
 #starts a client.event
 @client.event
@@ -116,7 +116,7 @@ async def on_message(message):
 
 @client.event
 async def on_guild_join(guild):
-    #await client.change_presence(status=discord.Status.online, activity=discord.Game(name="@ZAX help"))
+    #await client.change_presence(status=discord.Status.online, activity=discord.Game(name="The Strip help"))
     print(f"Bot is serving: {str(len(client.guilds))} guilds.")
 
 """
