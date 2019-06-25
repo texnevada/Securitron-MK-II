@@ -4,13 +4,8 @@ import discord
 from discord.ext import commands
 #Import permissions & error checks
 from discord.ext.commands import has_permissions, MissingPermissions
-#Allows us to read json files
-import json
 import sqlite3
 
-with open("prefix.json") as json_prefix:
-        #makes the name "prefix" a reference to the json file.
-        pre = json.load(json_prefix)
 class prefix_check:
     def __init__(guild, id):
         guild.id = id
