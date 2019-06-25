@@ -26,10 +26,10 @@ class prefix_check:
                 prefi.append(response["prefix"])
                 prefix = prefi
             else:
-                prefix = pre["prefix"]
+                prefix = ">"
             conn.close()
         except:
-            prefix = pre["prefix"]
+            prefix = ">"
         return prefix[0]
 
 #Making a class to reference this file later as extension
@@ -93,8 +93,8 @@ class help_commands(commands.Cog):
                 #sends embed
                 conn.close()
                 await ctx.send(embed=embed)
-            except:
-                return None
+        except:
+            return None
 
 def setup(client):
     client.add_cog(help_commands(client))
