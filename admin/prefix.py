@@ -45,9 +45,9 @@ class prefix(commands.Cog):
                 color = 0xe7e9d3
             )
 
-            embed.set_footer(text="This was brought to you by Enclave Database automated reply system")
+            embed.set_footer(text="This was brought to you by Robco Industries automated reply system")
             #embed.set_image(url="")
-            embed.set_thumbnail(url="https://static1.squarespace.com/static/5bf3d1670dbda3ebca76e890/t/5bf3d4911ae6cfcc40a70d62/1547021826210/?format=1500w")
+            embed.set_thumbnail(url="")
             embed.set_author(name="Securitron MK II systems", icon_url=self.client.icon_url)
             if isprefixold == True:
                 embed.add_field(name="Your server prefix has changed!", value="Your prefix is now changed\n**Old:** {}\n**New:** {}\nYou can also use \"@Securitron MK\" II for commands even if you forget your prefix".format(oldprefix[0], arg))
