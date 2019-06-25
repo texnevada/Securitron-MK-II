@@ -11,6 +11,7 @@ class logchannel(commands.Cog):
         self.client = client
 
     @commands.command()
+    @commands.guild_only()
     async def togglelogchannel(self, ctx):
         if ctx.author.guild_permissions.manage_channels:
             #connects to database
