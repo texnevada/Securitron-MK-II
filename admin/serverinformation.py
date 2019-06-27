@@ -60,11 +60,13 @@ class serverinformation(commands.Cog):
     @commands.command()
     @commands.has_permissions(manage_channels=True)
     @commands.guild_only()
-    async def modactions(self, ctx, arg1:str, *, arg2:str):
+    async def modactions(self, ctx, member: discord.Member=None):
+        if member == None:
+            member = ctx.author
+        print(member)
         #try:
-        print(ctx.guild.me)
-        entries = await ctx.guild.audit_logs(limit=None, user=ctx.guild.me).flatten()
-        await ctx.send('This has made {} moderation actions.'.format(len(entries)))
+        entries = await ctx.guild.audit_logs(limit=None, user=member).flatten()
+        await ctx.send('This user has made {} moderation actions.'.format(len(entries)))
         # except:
         #     await ctx.send("Did you mention the right user?")
 
