@@ -5,6 +5,11 @@ from discord.ext import commands
 #Import permissions & error checks
 from discord.ext.commands import has_permissions, MissingPermissions
 import sqlite3
+import json
+
+with open("prefix.json") as json_prefix:
+        #makes the name "prefix" a reference to the json file.
+        pre = json.load(json_prefix)
 
 class prefix_check:
     def __init__(guild, id):
@@ -21,10 +26,10 @@ class prefix_check:
                 prefi.append(response["prefix"])
                 prefix = prefi
             else:
-                prefix = ">"
+                prefix = pre["prefix"]
             conn.close()
         except:
-            prefix = ">"
+            prefix = pre["prefix"]
         return prefix[0]
 
 #Making a class to reference this file later as extension

@@ -36,6 +36,10 @@ with open("token.json") as json_file:
         #makes the name "data" a reference to the json file.
         data = json.load(json_file)
 
+with open("prefix.json") as json_prefix:
+        #makes the name "prefix" a reference to the json file.
+        pre = json.load(json_prefix)
+
 #Making a new function to get the prefix
 def get_prefix(client, message):
     try:
@@ -53,10 +57,11 @@ def get_prefix(client, message):
             prefi.append(response["prefix"])
             prefix = prefi
         else:
-            prefix = ">"
+            prefix = pre["prefix"]
         conn.close()
     except:
-        prefix = ">"
+        prefix = pre["prefix"]
+
 
     if not message.guild:
         return commands.when_mentioned_or(*prefix)(client, message)
